@@ -21,7 +21,7 @@ function get_distro()
   if [[ -f /etc/os-release ]]
   then
     source /etc/os-release
-    echo $NAME
+    echo $ID
   else
     uname
   fi
@@ -29,13 +29,19 @@ function get_distro()
 
 clear
 
-if [ "$(get_distro)" == "Ubuntu" ]; then
+if [ "$(get_distro)" == "ubuntu" ]; then
   header "OS Detected: Ubuntu Linux"
   header "Updating APT Repositories"
   sudo apt update
   INSTCMD="sudo apt install -y"
   footer "Done"
-elif [ "$(get_distro)" == "Alpine" ]; then
+elif [ "$(get_distro)" == "debian" ]; then
+  header "OS Detected: Debian GNU/Linux"
+  header "Updating APT Repositories"
+  sudo apt update
+  INSTCMD="sudo apt install -y"
+  footer "Done"
+elif [ "$(get_distro)" == "alpine" ]; then
   header "OS Detected: Alpine Linux"
   header "Updating APK Repositories"
   sudo apk update
