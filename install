@@ -83,7 +83,14 @@ else
 fi
 
 header "Cloning dotfiles repository..."
-git clone https://github.com/ozayturay/dotfiles.git ~/dotfiles
+if [ -d ~/dotfiles/.git ]; then
+  footer "Local dotfiles repository exists. Updating..."
+  cd ~/dotfiles
+  git pull
+else
+  footer "Local dotfiles repository not present. Cloning..."
+  git clone https://github.com/ozayturay/dotfiles.git ~/dotfiles
+fi
 footer "Done"
 
 header "Creating symlinks from dotfiles..."
