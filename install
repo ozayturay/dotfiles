@@ -71,7 +71,7 @@ else
 fi
 
 header "Cloning dotfiles repository..."
-echo git clone https://github.com/ozayturay/dotfiles.git ~/dotfiles
+git clone https://github.com/ozayturay/dotfiles.git ~/dotfiles
 footer "Done"
 
 header "Creating symlinks from dotfiles..."
