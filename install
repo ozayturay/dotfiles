@@ -75,5 +75,6 @@ echo git clone https://github.com/ozayturay/dotfiles.git ~/dotfiles
 footer "Done"
 
 header "Creating symlinks from dotfiles..."
+cd ~/dotfiles
 stow home
 footer "Done"
