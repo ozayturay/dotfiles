@@ -41,6 +41,12 @@ elif [ "$(get_distro)" == "debian" ]; then
   sudo apt update
   INSTCMD="sudo apt install -y"
   footer "Done"
+elif [ "$(get_distro)" == "raspbian" ]; then
+  header "OS Detected: Raspbian GNU/Linux"
+  header "Updating APT Repositories"
+  sudo apt update
+  INSTCMD="sudo apt install -y"
+  footer "Done"
 elif [ "$(get_distro)" == "alpine" ]; then
   header "OS Detected: Alpine Linux"
   header "Updating APK Repositories"
