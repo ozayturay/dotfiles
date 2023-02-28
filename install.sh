@@ -89,19 +89,19 @@ if [ -d ~/dotfiles/.git ]; then
   git pull
 else
   footer "Local dotfiles repository not present. Cloning..."
-  git clone https://github.com/ozayturay/dotfiles.git ~/dotfiles
+  git clone git@github.com:ozayturay/dotfiles.git ~/dotfiles
 fi
 footer "Done"
 
 header "Creating symlinks from dotfiles..."
 cd ~/dotfiles
 
-header "Home Folder"
+footer "Home Folder..."
 rm -rf ~/bin
 rm -f ~/.bash_aliases
 stow home
 
-header "Neofetch"
+footer "Neofetch..."
 rm -rf ~/.config/neofetch
 stow neofetch
 
