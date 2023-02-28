@@ -95,5 +95,14 @@ footer "Done"
 
 header "Creating symlinks from dotfiles..."
 cd ~/dotfiles
+
+header "Home Folder"
+rm -rf ~/bin
+rm -f ~/.bash_aliases
 stow home
+
+header "Neofetch"
+rm -rf ~/.config/neofetch
+stow neofetch
+
 footer "Done"
