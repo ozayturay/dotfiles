@@ -60,49 +60,40 @@ else
 fi
 
 header "Installation Command:"
-footer "$INSTCMD appname"
+footer "$INSTCMD package-name"
 
 header "Checking if git is installed..."
 if [ -z "$(command -v git)" ]; then
-  footer "Command git is not installed. Installing..."
+  footer "Package git is not installed. Installing..."
   $INSTCMD git
   footer "Done"
 else
-  footer "Command git is installed."
+  footer "Package git is installed."
   footer "Progressing..."
 fi
 
 header "Checking if stow is installed..."
 if [ -z "$(command -v stow)" ]; then
-  footer "Command stow is not installed. Installing..."
+  footer "Package stow is not installed. Installing..."
   $INSTCMD stow
   footer "Done"
 else
-  footer "Command stow is installed."
+  footer "Package stow is installed."
   footer "Progressing..."
 fi
 
 header "Cloning dotfiles repository..."
-if [ -d ~/dotfiles/.git ]; then
+if [ -d ~/.dotfiles/.git ]; then
   footer "Local dotfiles repository exists. Updating..."
-  cd ~/dotfiles
+  cd ~/.dotfiles
   git pull
 else
   footer "Local dotfiles repository not present. Cloning..."
-  git clone git@github.com:ozayturay/dotfiles.git ~/dotfiles
+  git clone git@github.com:ozayturay/dotfiles.git ~/.dotfiles
 fi
 footer "Done"
 
 header "Creating symlinks from dotfiles..."
-cd ~/dotfiles
-
-footer "Home Folder..."
-rm -rf ~/bin
-rm -f ~/.bash_aliases
-stow home
-
-footer "Neofetch..."
-rm -rf ~/.config/neofetch
-stow neofetch
-
+cd ~/.dotfiles
+stow .
 footer "Done"
