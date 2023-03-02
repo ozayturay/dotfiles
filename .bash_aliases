@@ -1,4 +1,4 @@
-export PATH=/opt/bin:$PATH
+export PATH=~/bin:/opt/bin:$PATH
 
 export PS1='${debian_chroot:+($debian_chroot)}\u@\H:\w\$ '
 export PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\H: \w\a\]$PS1"
