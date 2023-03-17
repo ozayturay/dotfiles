@@ -35,6 +35,12 @@ if [ "$(get_distro)" == "ubuntu" ]; then
   sudo apt update
   INSTCMD="sudo apt install -y"
   footer "Done"
+elif [ "$(get_distro)" == "pop" ]; then
+  header "OS Detected: Pop!_OS"
+  header "Updating APT Repositories"
+  sudo apt update
+  INSTCMD="sudo apt install -y"
+  footer "Done"
 elif [ "$(get_distro)" == "debian" ]; then
   header "OS Detected: Debian GNU/Linux"
   header "Updating APT Repositories"
