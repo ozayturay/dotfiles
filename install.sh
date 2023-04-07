@@ -29,8 +29,8 @@ function get_distro()
 
 clear
 
-if [ "$(get_distro)" == "ubuntu" ]; then
-  header "OS Detected: Ubuntu Linux"
+if [ "$(get_distro)" == "neon" ]; then
+  header "OS Detected: KDE Neon"
   header "Updating APT Repositories"
   sudo apt update
   INSTCMD="sudo apt install -y"
@@ -41,20 +41,26 @@ elif [ "$(get_distro)" == "pop" ]; then
   sudo apt update
   INSTCMD="sudo apt install -y"
   footer "Done"
+elif [ "$(get_distro)" == "ubuntu" ]; then
+  header "OS Detected: Ubuntu"
+  header "Updating APT Repositories"
+  sudo apt update
+  INSTCMD="sudo apt install -y"
+  footer "Done"
 elif [ "$(get_distro)" == "debian" ]; then
-  header "OS Detected: Debian GNU/Linux"
+  header "OS Detected: Debian"
   header "Updating APT Repositories"
   sudo apt update
   INSTCMD="sudo apt install -y"
   footer "Done"
 elif [ "$(get_distro)" == "raspbian" ]; then
-  header "OS Detected: Raspbian GNU/Linux"
+  header "OS Detected: Raspbian"
   header "Updating APT Repositories"
   sudo apt update
   INSTCMD="sudo apt install -y"
   footer "Done"
 elif [ "$(get_distro)" == "alpine" ]; then
-  header "OS Detected: Alpine Linux"
+  header "OS Detected: Alpine"
   header "Updating APK Repositories"
   sudo apk update
   INSTCMD="sudo apk add --update"
