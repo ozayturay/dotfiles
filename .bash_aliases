@@ -7,5 +7,8 @@ export COMPOSER_ALLOW_SUPERUSER=1
 
 alias dir='ls -al --color'
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-eval "$(oh-my-posh init bash --config ~/.poshthemes/quick-term-oneline.omp.json)"
+#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+#eval "$(oh-my-posh init bash --config ~/.poshthemes/quick-term-oneline.omp.json)"
+
+clear
+neofetch
